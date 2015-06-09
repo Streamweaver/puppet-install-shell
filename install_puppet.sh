@@ -43,10 +43,10 @@ critical () {
     log "${RED}CRIT${RESET}: ${1}"
 }
 
-utopic () {
-    warn "There is no utopic release yet, see https://tickets.puppetlabs.com/browse/CPR-92 for progress";
-    warn "We'll use the trusty package for now";
-    ubuntu_codename="trusty";
+vivid () {
+    warn "There is no vivid release yet, see https://tickets.puppetlabs.com/browse/CPR-92 for progress";
+    warn "We'll use the utopic package for now";
+    ubuntu_codename="utopic";
 }
 
 # Check whether a command exists - returns 0 if it does, 1 if it does not
@@ -541,7 +541,8 @@ case $platform in
           "13.04") ubuntu_codename="raring";;
           "13.10") ubuntu_codename="saucy";;
           "14.04") ubuntu_codename="trusty";;
-          "14.10") utopic;;
+          "14.10") ubuntu_codename="utopic";;
+          "15.04") vivid;;
         esac
         filetype="deb"
         filename="puppetlabs-release-${ubuntu_codename}.deb"
